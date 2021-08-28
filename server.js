@@ -2,6 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./routes/promotionRouter');
 
 // server variables
 const hostname = 'localhost';
@@ -19,6 +20,9 @@ app.use(express.json());
 
 // Provide the root path for the campsiteRouter
 app.use('/campsites', campsiteRouter);
+
+// Provide the root path for the promotionRouter
+app.use('/promotions', promotionRouter);
 
 // Setup express to serve files from the public folder 
 app.use(express.static(__dirname + '/public'));
